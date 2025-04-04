@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>تسجيل الدخول – EventSync</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>تسجيل الدخول</h1>
+    <form onsubmit="login(event)">
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+      <input type="password" id="password" placeholder="كلمة المرور" required />
+      <button type="submit">دخول</button>
+    </form>
+    <a href="index.html">العودة للصفحة الرئيسية</a>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // تحقق بسيط
+      if (email === "admin@eventsync.com" && password === "1234") {
+        alert("تم تسجيل الدخول بنجاح!");
+        window.location.href = "dashboard.html";
+      } else {
+        alert("البريد الإلكتروني أو كلمة المرور غير صحيحة.");
+      }
+    }
+  </script>
+</body>
+</html>
